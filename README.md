@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/og-image.png" alt="dont-get-sued banner" width="100%" />
+</p>
+
 # dont-get-sued — Legal, Privacy, Accessibility & Consumer Protection Auditor
 
 A production-grade Antigravity skill and multi-agent audit suite designed to proactively protect software projects, SaaS products, e-commerce stores, and mobile applications from regulatory fines, consumer lawsuits, and intellectual property liabilities.
