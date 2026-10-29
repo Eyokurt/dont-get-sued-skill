@@ -1,5 +1,11 @@
 # Audit Module 01: Privacy Policy
 
+**Last Reviewed**: Q4 2026  
+**Auditor Domain**: `legal-policy-auditor`  
+**Severity**: Critical
+
+---
+
 ## 1. Legal Framework & Regulatory Exposure
 
 - **Statutory Frameworks**:
@@ -20,11 +26,25 @@
   - Verify that all categories of personal data actively collected across the system (identifiers, device telemetry, payment records, analytics) are explicitly disclosed.
   - Verify that the stated legal bases match reality (e.g., contractual necessity for service delivery, consent for marketing, legitimate interest for fraud prevention).
   - Verify that data retention durations or specific retention criteria are stated rather than indefinite retention claims.
-  - Verify that all third-party sub-processors (cloud hosts, payment gateways, analytics providers) and cross-border transfer safeguards (SCCs) are enumerated.
+  - Verify that all third-party sub-processors (cloud hosts, payment gateways, analytics providers) and cross-border transfer safeguards (Standard Contractual Clauses / SCCs) are enumerated.
 
 ---
 
-## 3. Violation Red Flags (İhlal Kriterleri)
+## 3. Concrete Inspection Heuristics & Signals
+
+- **Common Navigation & Route Signals**:
+  - Routes to verify: `/privacy`, `/privacy-policy`, `/legal/privacy`
+  - Footer links: Looking for unambiguous anchor labels (`Privacy Policy`, `Gizlilik Politikası`).
+- **Essential Policy Content Checklist**:
+  - Controller Name: Full registered entity (not just a generic product brand name).
+  - Dedicated Contact: Direct email (e.g. `privacy@example.com` or `dpo@example.com`).
+  - Third-Party Processors: Explicit listing of cloud providers (AWS, GCP), billing gateways (Stripe), error trackers (Sentry), and marketing tools.
+  - Cross-Border Safeguards: Explicit mention of Standard Contractual Clauses (SCCs) or adequacy decisions for international data transfers.
+  - User Rights Section: Clear enumeration of rights (access, rectification, erasure, data portability, right to object, right to lodge a complaint with a supervisory authority).
+
+---
+
+## 4. Violation Red Flags (İhlal Kriterleri)
 
 - Missing or broken link to the Privacy Policy on public surfaces or registration views.
 - Policy text consists of unedited boilerplate or generic templates containing placeholder tokens (e.g. `[Insert Company Name]`, `example.com`).
@@ -34,7 +54,7 @@
 
 ---
 
-## 4. Compliance Benchmarks (Uyum Standardı)
+## 5. Compliance Benchmarks (Uyum Standardı)
 
 - Conspicuous, permanent navigation links labeled "Privacy Policy" accessible across all viewports and views.
 - Real, verified corporate identity, registered address, and responsive contact email disclosed within the policy.
@@ -43,7 +63,7 @@
 
 ---
 
-## 5. Remediation Principles (Çözüm İlkeleri)
+## 6. Remediation Principles (Çözüm İlkeleri)
 
 - Integrate a dedicated, permanent route or accessible view dedicated to privacy disclosures.
 - Link the Privacy Policy directly adjacent to primary user registration and conversion action points so users are informed at the exact point of data ingress.

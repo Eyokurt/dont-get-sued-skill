@@ -91,13 +91,14 @@ Agents should consult the high-level specification guides corresponding to their
 
 ---
 
-## Scoring & Audit Progression
+## Audit Progression & Exit Gates
 
-- **100 Points Base Score**:
-  - Critical statutory violation: **-10 points**
-  - High regulatory risk: **-5 points**
-  - Medium / Informational gap: **-2.5 points**
-- **Exit Gate for COMPLIANT Status**:
-  - Zero open CRITICAL violations.
-  - Zero open HIGH violations without legal counsel justification.
-  - Verification that remediation maintains system stability and build integrity.
+- **Finding Severity Tiers**:
+  - **CRITICAL_BLOCKER**: Direct statutory violation (e.g. tracking before consent, missing alt text on essential interactions, roach motel cancellation, unlicensed fonts). Must be resolved before public deployment.
+  - **REGULATORY_WARNING**: Ambiguous policy terms, low contrast on secondary elements, unverified marketing testimonials. Strongly recommended for remediation.
+  - **INFORMATIONAL_GAP**: Best practice enhancements (e.g. adding structured skip-links, optimizing font attribution notices).
+- **Exit Criteria for NO_CRITICAL_TECHNICAL_GAPS_DETECTED**:
+  - Zero open CRITICAL_BLOCKER violations.
+  - Zero open REGULATORY_WARNING items without documented business/legal justification.
+  - Deterministic scripts (`scripts/audit-licenses.js`, `scripts/audit-contrast.js`) executed and passing.
+  - Verification that remediation maintains system stability and passes build tests.

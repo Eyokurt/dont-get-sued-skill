@@ -1,5 +1,11 @@
 # Audit Module 11: Data Deletion Request (DSAR & Right to Erasure)
 
+**Last Reviewed**: Q4 2026  
+**Auditor Domain**: `privacy-data-auditor`  
+**Severity**: Critical
+
+---
+
 ## 1. Legal Framework & Regulatory Exposure
 
 - **Statutory Frameworks**:
@@ -24,7 +30,26 @@
 
 ---
 
-## 3. Violation Red Flags (İhlal Kriterleri)
+## 3. Concrete Inspection Heuristics & Signals
+
+- **Self-Service Deletion Heuristics**:
+  - Check account settings views for explicit deletion triggers:
+    - `"Delete Account"`, `"Erase My Data"`, `"Close Account Permanently"`
+  - Verify presence of dual confirmation:
+    - Re-entering account password or typing `"DELETE"` to prevent accidental triggering.
+- **Backend Architecture Heuristics**:
+  - Inspect deletion handlers for true scrubbing vs soft-delete:
+    - Red Flag: Database query simply executing `UPDATE users SET is_deleted = true WHERE id = ?` with email and profile data untouched.
+    - Compliant: Anonymizing or overwriting PII (`email = 'deleted-123@anonymized.invalid'`, scrubbing IP logs, deleting sessions).
+- **Vendor Cascade Hooks**:
+  - Verify downstream deletion dispatchers:
+    - Customer CRM (HubSpot, Customer.io, Klaviyo)
+    - Payment Customer IDs (Stripe customer deletion / detachment)
+    - Analytics Profiles (Mixpanel, PostHog profile deletion)
+
+---
+
+## 4. Violation Red Flags (İhlal Kriterleri)
 
 - Requiring users to call customer support or write physical letters to delete an account created online.
 - Falsely claiming data is deleted while keeping unanonymized personal information in primary operational databases.
@@ -33,7 +58,7 @@
 
 ---
 
-## 4. Compliance Benchmarks (Uyum Standardı)
+## 5. Compliance Benchmarks (Uyum Standardı)
 
 - Self-service account deletion trigger located directly inside user profile or security settings.
 - Backend deletion pipeline that irreversibly scrubs personal identifiers from internal databases.
@@ -42,7 +67,7 @@
 
 ---
 
-## 5. Remediation Principles (Çözüm İlkeleri)
+## 6. Remediation Principles (Çözüm İlkeleri)
 
 - Design backend account deletion routines to execute permanent data scrubbing and cryptographic anonymization.
 - Implement integration hooks that notify external third-party services when an account deletion event occurs.
