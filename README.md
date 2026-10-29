@@ -4,7 +4,7 @@
 
 # dont-get-sued — Legal, Privacy, Accessibility & Consumer Protection Auditor
 
-A production-grade Antigravity skill and multi-agent audit suite designed to proactively protect software projects, SaaS products, e-commerce stores, and mobile applications from regulatory fines, consumer lawsuits, and intellectual property liabilities.
+A production-grade agent skill and multi-agent audit suite designed to proactively protect software projects, SaaS products, e-commerce stores, and mobile applications from regulatory fines, consumer lawsuits, and intellectual property liabilities.
 
 Rather than micromanaging file paths or grep patterns, `dont-get-sued` operates at the system architecture level, empowering autonomous agents with comprehensive regulatory criteria, concrete detection heuristics, failure indicators, and deterministic test scripts.
 
@@ -145,7 +145,7 @@ The audit suite deploys a Lead Orchestrator paired with 4 specialist domain audi
 
 ## How to Run
 
-### In Antigravity / Agent Chat:
+### In AI Agent / Coding Assistant Chat:
 Run the slash command or prompt directly:
 ```
 /dont-get-sued
@@ -166,7 +166,7 @@ Or ask in natural language:
 
 `dont-get-sued` is designed to be tool-agnostic:
 
-- **Google Antigravity**: Native execution via `SKILL.md` orchestrator and `subagents/` swarm.
+- **Universal Agent Runtimes**: Native execution via `SKILL.md` orchestrator and `subagents/` swarm.
 - **Claude Code**: Map subagents to `.claude/agents/*.md` with YAML frontmatter, or execute modules sequentially from `modules/`.
 - **Cursor / Standalone LLM**: Reference `SKILL.md` as custom workspace rules (`.cursorrules` or `.agent/rules/`).
 
