@@ -154,6 +154,14 @@ dont-get-sued/
 
 ---
 
-## Disclaimer
+## The "Don't Sue Me Either" Disclaimer
 
-dont-get-sued is an automated technical compliance auditor designed by software engineers to catch high-risk technical violations. It does not constitute formal legal advice. For binding legal opinions or jurisdiction-specific contract drafting, consult a qualified attorney.
+> ### **IMPORTANT NOTICE**
+> 
+> **By using `dont-get-sued`, you formally acknowledge that:**
+> 
+> 1. **This tool is named `dont-get-sued`, not `i-will-represent-you-in-court-if-you-get-sued`.**
+> 2. **I am a software developer, not your corporate attorney, legal counsel, or courtroom bodyguard.**
+> 3. **Suing the creator of `dont-get-sued` because you got sued creates a recursive legal paradox that will crash the simulation.**
+> 
+> **This tool is provided entirely "as is" to catch silly code and UI slip-ups. It comes with zero warranties of any kind. If a regulatory authority or plaintiff knocks on your door, showing them this README will not hold up before a judge. When in doubt, consult a real human lawyer who charges by the hour.**
